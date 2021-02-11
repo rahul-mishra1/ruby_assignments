@@ -15,4 +15,12 @@ RSpec.describe 'ArmstrongNumber' do
       expect(expected).to eq(false)
     end
   end
+
+  #This spec will pass as '0' is removed
+  it 'should return false if no is not armstrong' do
+    [10,12,14,15].each do |num|
+      expected = ArmstrongNumber.new(num).is_armstrong
+      expect(expected).to eq(false)
+    end
+  end
 end
