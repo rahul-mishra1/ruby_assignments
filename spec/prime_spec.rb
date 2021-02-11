@@ -8,8 +8,16 @@ RSpec.describe 'Prime' do
     end
   end
 
+  #This spec will fail due to 0,as 0 is an armstrong number
   it 'should return false if no is not prime' do
     [0,1,4,6,9,10,12,14,15].each do |num|
+      expected = Prime.new(num).is_prime
+      expect(expected).to eq(false)
+    end
+  end
+
+  it 'should return false if no is not prime' do
+    [1,4,6,9,10,12,14,15].each do |num|
       expected = Prime.new(num).is_prime
       expect(expected).to eq(false)
     end

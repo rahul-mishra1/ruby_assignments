@@ -8,6 +8,7 @@ RSpec.describe 'ArmstrongNumber' do
     end
   end
 
+  #This spec will fail due to 0,as 0 is an armstrong number
   it 'should return false if no is not armstrong' do
     [0,10,12,14,15].each do |num|
       expected = ArmstrongNumber.new(num).is_armstrong
