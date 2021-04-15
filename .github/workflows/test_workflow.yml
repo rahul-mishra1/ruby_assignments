@@ -16,3 +16,7 @@ jobs:
           echo "********Step 3*******"
           git status
           echo "********Step 4*******"
+          git checkout test_workflow
+          echo "********Step 5*******"
+          git status
+          echo "********Step 6*******"
