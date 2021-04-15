@@ -12,4 +12,4 @@ jobs:
           git config user.email github-actions@github.com
           git checkout test_workflow
           git rebase master
-          git push test_workflow -f
+          echo "remote ${{ git remote -v }}"
