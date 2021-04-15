@@ -8,5 +8,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          echo "**** Hello *****"
-          echo "**** $(ls)"
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git fetch origin
+          git status
+          git checkout test_workflow
+          echo "Before rebase git status $(git status)"
+          git status
+          git rebase master
+          echo "After git status $(git status)"
