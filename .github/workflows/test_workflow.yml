@@ -13,7 +13,7 @@ jobs:
           git fetch origin
           git status
           git checkout test_workflow
+          echo "Before rebase git status $${{git status}}"
           git status
           git rebase master
-          git status
-          git push origin test_workflow -f
+          echo "After git status $${{git status}}"
