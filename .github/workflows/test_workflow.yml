@@ -20,3 +20,5 @@ jobs:
           echo "********Step 5*******"
           git status
           echo "********Step 6*******"
+          git rebase test_workflow
+          echo "********Step 7*******"
