@@ -1,17 +1,14 @@
 name: Testing
-on:
-  pull_request:
-    types: [closed]
+on: push
 jobs:
-  greet:
+  build:
     runs-on: ubuntu-latest
     steps:
-    - name: Send greeting
-      run: echo "Hello ${{ github.event.inputs.name }}"
-  delete-branch:
-    runs-on: ubuntu-latest
-    steps:
-    - name: delete branch
-      uses: SvanBoxel/delete-merged-branch@main
-      env:
-        GITHUB_TOKEN: ${{ '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' }}
+      - uses: actions/checkout@v2
+      - run: |
+          date > generated.txt
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "generated"
+          git push
