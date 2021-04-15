@@ -8,4 +8,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          git remote -v
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git fetch origin
+          git status
+          git checkout test_workflow
+          git status
+          git rebase master
+          git status
+          git push origin test_workflow -f
