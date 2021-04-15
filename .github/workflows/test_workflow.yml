@@ -1,8 +1,17 @@
 name: Testing
-on: [push]
+on:
+  pull_request:
+    types: [closed]
 jobs:
   greet:
     runs-on: ubuntu-latest
     steps:
     - name: Send greeting
       run: echo "Hello ${{ github.event.inputs.name }}"
+  delete-branch:
+    runs-on: ubuntu-latest
+    steps:
+    - name: delete branch
+      uses: SvanBoxel/delete-merged-branch@main
+      env:
+        GITHUB_TOKEN: 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
