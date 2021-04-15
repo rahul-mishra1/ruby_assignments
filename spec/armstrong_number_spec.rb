@@ -11,7 +11,9 @@ RSpec.describe 'ArmstrongNumber' do
   it 'should return false if no is not armstrong' do
     [0,10,12,14,15].each do |num|
       expected = ArmstrongNumber.new(num).is_armstrong
+      # HELLO
       expect(expected).to eq(false)
+      # Byeee
     end
   end
 end
